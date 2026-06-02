@@ -32,7 +32,7 @@ if(a>b):
 else:
   print("b is largest")
 
-#4. typecasting
+#4. typecasting.
 
 a="10"
 b=int(a)
