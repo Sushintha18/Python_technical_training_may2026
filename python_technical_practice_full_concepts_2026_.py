@@ -593,3 +593,81 @@ if d < 10:
     print("Collision Risk")
 else:
     print("Safe")
+
+#1. SCENARIO BASED QUESTIONS:
+
+'''School Result Management System
+A school wants to automate student result processing. Each student has marks in multiple subjects stored in an array.
+Create a Student class that:
+•	Stores student name and marks. 
+•	Calculates total and average. 
+•	Finds the highest mark. 
+•	Displays pass/fail status (pass mark = 35). 
+Sample Input
+Student Name: Ravi
+Marks: [78, 45, 92, 30, 67]
+Sample Output
+Total: 312
+Average: 62.4
+Highest Mark: 92
+Status: Fail'''
+
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+    def result(self):
+        total = sum(self.marks)
+        average = total / len(self.marks)
+        highest = max(self.marks)
+        if min(self.marks) >= 35:
+            status = "Pass"
+        else:
+            status = "Fail"
+        print("Total:", total)
+        print("Average:", average)
+        print("Highest Mark:", highest)
+        print("Status:", status)
+name = input("Enter student name: ")
+marks = list(map(int, input("Enter marks: ").split()))
+student = Student(name, marks)
+student.result()
+
+#2. 
+'''Employee Performance Tracker
+A company stores monthly performance scores of employees in an array.
+Create an Employee class that:
+•	Stores employee details. 
+•	Finds the best performance score. 
+•	Calculates average performance. 
+•	Counts months where score exceeded 80. 
+Sample Input
+Employee Name: Priya
+Scores: [75, 82, 90, 65, 88, 70]
+Sample Output
+Best Score: 90
+Average Score: 78.3
+Months Above 80: 3 '''
+
+class Employee:
+  def __init__(self,name,score):
+    self.name=name
+    self.score=score
+  def result(self):
+    score=max(self.score)
+    avg_score=sum(self.score)/len(self.score)
+    count=0
+    for months in self.score:
+      if months>=80:
+        count=count+1
+      else:
+        pass
+    print("best_score: ",score)
+    print("average score :",avg_score)
+    print("Months above:",count)
+  
+name=input("employee name:")
+score = list (map(int,input("scores: ").split()))
+employee=Employee(name,score)
+employee.result()
