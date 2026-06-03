@@ -671,3 +671,112 @@ name=input("employee name:")
 score = list (map(int,input("scores: ").split()))
 employee=Employee(name,score)
 employee.result()
+
+#3.
+'''3. Smart Parking Lot System
+A parking lot stores vehicle numbers in an array.
+Create a ParkingLot class that:
+•	Checks whether a vehicle is already parked.
+•	Finds duplicate entries.
+•	Displays the number of unique vehicles.
+Sample Input
+Vehicle Numbers:
+[101, 105, 110, 101, 115, 105]
+Sample Output
+Duplicate Vehicles: [101, 105]
+Unique Vehicles: 4.'''
+
+
+#1.	Second Largest Without Sorting
+
+arr=list(map(int,input().split()))
+largest=0
+second=0
+for n in arr:
+  if n>largest:
+    second=largest
+    largest=n
+  elif n>second and n!=largest:
+    num=largest
+  else:
+    pass
+print(second)
+
+#2. Scenario: Identify the first unique character in a string.
+
+s = input()
+for char in s:
+    if s.count(char) == 1:
+        print(char)
+        break
+
+#3. Rotate List by K Positions
+
+s=list(input())
+k=2
+res=s[-k:]+s[:-k]
+print(res)
+
+#4. odd even arrangement:
+num =list(map(int,input().split()))
+even=[]
+odd=[]
+for n in num:
+  if n%2==0:
+    even.append(n)
+  else:
+    odd.append(n)
+print(even+odd) 
+
+
+
+#5. Nested List Sum
+
+x=input()
+t=0
+for i in x:
+  i=list(str(i))
+  for j in i:
+    if(j=="[" or j=="]" or j=="," or j==" "):
+      pass
+    else:
+      t+=int(j)
+print(t)
+
+#6. Special Number Pattern
+#Scenario: Print numbers where the sum of digits equals the product of digits.
+
+for i in range (1,101):
+  n=str(i)
+  if(len(n)==1):
+    print(int(i),end=" ")  
+  else:
+      if(int(n[0])+int(n[1])==int(n[0])*int(n[1])):
+        print(i, end=" ")
+      else:
+        pass
+
+#7. Pair Sum Problem
+#Scenario: Find all pairs whose sum equals a target value.
+'''Input:
+arr = [2,7,11,15,3,6]
+target = 9 '''
+
+arr =list(map(int,input().split()))
+t=int(input())
+for i in range(0,len(arr)):
+  for j in range(i+1,len(arr)):
+    if arr[i]+arr[j]==t:
+      print(f"({arr[i]},{arr[j]})")
+
+
+#8. print the consonants
+
+s=input()
+for ch in s:
+  if ch not in 'AEIOUaeiou':
+    print(ch,end="")
+  else:
+    pass
+
+
